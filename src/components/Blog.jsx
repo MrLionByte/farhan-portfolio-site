@@ -1,7 +1,24 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { ArrowUpRight } from 'lucide-react';
-import blogPosts from '../data/blog';
 
 const Blog = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get(
+        'https://gist.githubusercontent.com/MrLionByte/f8d4d8b982258cdc1097a0af05c3550d/raw/bf058cd3a68dd4a31e23672328cc16e8a8e0b94a/blogs.json'
+      );
+      setBlogPosts(response?.data || []);
+    } catch (error) {
+      console.error('Failed to load blog posts:', error);
+    }
+  };
+  
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
   return (
     <section id="blog" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,7 +26,7 @@ const Blog = () => {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Blogs</h2>
           <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Sharing my thoughts, experiences, and knowledge on web development and IoT
+            Sharing my thoughts, experiences, and knowledge on Programming, Web development, IoT etc
           </p>
         </div>
 
@@ -56,14 +73,14 @@ const Blog = () => {
             </a>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
-          <a 
+          {/* <a 
             href="/blog" 
             className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
           >
             View All Articles
-          </a>
+          </a> */}
         </div>
       </div>
     </section>

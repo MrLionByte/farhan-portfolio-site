@@ -67,7 +67,7 @@ const Contact = () => {
                       href="mailto:your.email@example.com" 
                       className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                     >
-                      your.email@example.com
+                      fmahmoodn@gmail.com
                     </a>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ const Contact = () => {
                       href="tel:+1234567890" 
                       className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                     >
-                      +1 (234) 567-890
+                      unavailable
                     </a>
                   </div>
                 </div>
@@ -94,15 +94,20 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium text-gray-900 dark:text-white mb-1">Location</h3>
                     <p className="text-gray-600 dark:text-gray-400">
-                      San Francisco, CA, USA
+                      Kerala, India
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="md:col-span-3">
-              <form 
+           <div className="md:col-span-3">
+            <div className=' className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-md"'>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <p className='text-yellow-600'>⚠️ message box under development</p>
+              </div>
+            </div>
+              {/*  <form 
                 onSubmit={handleSubmit}
                 className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-md"
               >
@@ -195,7 +200,8 @@ const Contact = () => {
                     </>
                   )}
                 </button>
-              </form>
+              </form> */}
+             
             </div>
           </div>
         </div>

@@ -2,10 +2,30 @@ import { CodeIcon, UserIcon, Briefcase, GraduationCap } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { category: 'Front-end', items: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'] },
-    { category: 'Back-end', items: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL'] },
-    { category: 'IoT', items: ['Arduino', 'Raspberry Pi', 'MQTT', 'Embedded C'] },
-    { category: 'Tools', items: ['Git', 'Docker', 'AWS', 'CI/CD'] },
+    {
+      category: 'Backend',
+      items: ['Python', 'Django', 'Django REST Framework', 'JWT Auth', 'Redis', 'Django Channels', 'Celery', 'FastAPI (Learning)']
+    },
+    {
+      category: 'Frontend',
+      items: ['React', 'Redux', 'Tailwind', 'Bootstrap']
+    },
+    {
+      category: 'Database & Messaging',
+      items: ['PostgreSQL', 'MongoDB', 'Kafka', 'Redis', 'Firebase']
+    },
+    {
+      category: 'DevOps / Cloud',
+      items: ['Docker', 'Kubernetes', 'AWS (EC2, S3)', 'GCP (Kubernetes Cluster)', 'CI/CD']
+    },
+    {
+      category: 'IoT / Embedded',
+      items: ['Arduino', 'Node MCU', 'Embedded C']
+    },
+    {
+      category: 'Tools & Utilities',
+      items: ['Git', 'Nginx', 'Postman', 'Figma']
+    }
   ];
 
   return (
@@ -27,34 +47,31 @@ const About = () => {
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Who I Am</h3>
               </div>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                I'm a passionate developer specializing in web development and IoT solutions. With a background 
-                in computer science and a love for building innovative products, I create solutions that 
-                bridge the gap between hardware and software.
+                 I’m a passionate, resilient, and responsible Full-Stack Developer with a strong foundation in Python, Django, React.js, and Microservices architecture. But that doesn't limit me,  I’m always eager to learn and grow. As a self-learner, my journey began with an IoT-based project in college, which ignited my passion for software development and set me on a path of continuous hands-on learning.
               </p>
               <p className="text-gray-600 dark:text-gray-400">
-                When not coding, you'll find me exploring new technologies, contributing to open-source 
-                projects, or sharing my knowledge through my blog and technical articles.
+                I specialize in building scalable backend systems, integrating services like Kafka, Redis, RabbitMQ, Celery, and deploying with Docker and Kubernetes on AWS or GCP. I thrive in fast-paced environments, love exploring new technologies, and enjoy contributing to open-source, writing technical content, and solving real-world problems through code.
               </p>
             </div>
 
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-md mt-6 transition-all duration-300 hover:shadow-lg">
-              <div className="flex items-center mb-4">
+              {/* <div className="flex items-center mb-4">
                 <GraduationCap className="text-indigo-600 dark:text-indigo-400 mr-3" size={24} />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Education</h3>
               </div>
               <div className="mb-4">
-                <h4 className="text-gray-800 dark:text-gray-200 font-medium">Master's in Computer Science</h4>
-                <p className="text-gray-600 dark:text-gray-400">University Name • 2018-2020</p>
+                <h4 className="text-gray-800 dark:text-gray-200 font-medium">Diploma in EEE</h4>
+                <p className="text-gray-600 dark:text-gray-400">SSMPTC Tirur • 2019-2022</p>
               </div>
               <div>
                 <h4 className="text-gray-800 dark:text-gray-200 font-medium">Bachelor's in Electrical Engineering</h4>
                 <p className="text-gray-600 dark:text-gray-400">University Name • 2014-2018</p>
-              </div>
+              </div> */}
             </div>
           </div>
           
           <div>
-            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+            {/* <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-md transition-all duration-300 hover:shadow-lg">
               <div className="flex items-center mb-4">
                 <Briefcase className="text-indigo-600 dark:text-indigo-400 mr-3" size={24} />
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Experience</h3>
@@ -75,7 +92,7 @@ const About = () => {
                   embedded devices, cloud infrastructure, and web applications.
                 </p>
               </div>
-            </div>
+            </div> */}
 
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-md mt-6 transition-all duration-300 hover:shadow-lg">
               <div className="flex items-center mb-4">
