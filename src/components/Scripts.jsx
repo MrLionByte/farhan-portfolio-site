@@ -9,11 +9,11 @@ const Scripts = () => {
     const fetchScripts = async () => {
       try {
         const response = await axios.get(
-          'https://gist.githubusercontent.com/MrLionByte/f8d4d8b982258cdc1097a0af05c3550d/raw/dc836f104b9330e504d3dacb82876a7f992b3fea/scripts.json'
+          'https://api.myjson.online/v1/records/2169004c-51ff-416e-a7fb-42acaa131440'
         );
         console.log(response.data.length);
         
-        setScripts((response.data.length > 1) ? response.data : null);
+        setScripts((response.data.data.length > 1) ? response.data.data : null);
       } catch (error) {
         console.error('Failed to load scripts:', error);
       }

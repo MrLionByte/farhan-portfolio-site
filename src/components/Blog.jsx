@@ -4,83 +4,78 @@ import { ArrowUpRight } from 'lucide-react';
 
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
+
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(
-        'https://gist.githubusercontent.com/MrLionByte/f8d4d8b982258cdc1097a0af05c3550d/raw/bf058cd3a68dd4a31e23672328cc16e8a8e0b94a/blogs.json'
+        'https://api.myjson.online/v1/records/187df6d2-09f8-457c-abd4-f4bac5908ddb'
       );
-      setBlogPosts(response?.data || []);
+      setBlogPosts(response?.data?.data || []);
     } catch (error) {
       console.error('Failed to load blog posts:', error);
     }
   };
-  
+
   useEffect(() => {
     fetchBlogs();
   }, []);
 
   return (
-    <section id="blog" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section
+      id="blog"
+      className="py-20 bg-gradient-to-b from-white via-white/60 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="max-w-3xl mx-auto mb-16 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Blogs</h2>
-          <div className="w-20 h-1 bg-indigo-600 mx-auto mb-6 rounded-full"></div>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
+            Blogs
+          </h2>
+          <div className="w-24 h-1 mx-auto mb-6 bg-gradient-to-r from-indigo-500 to-indigo-900 rounded-full animate-pulse"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Sharing my thoughts, experiences, and knowledge on Programming, Web development, IoT etc
+            Sharing my thoughts, experiences, and knowledge on programming, web development, IoT, and more.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Blog Posts */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {blogPosts.map((post) => (
-            <a 
+            <a
               key={post.id}
               href={post.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block overflow-hidden rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group block overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-md bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             >
-              <div className="relative">
-                <div className="overflow-hidden h-60">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
+              <div className="relative h-64 overflow-hidden rounded-t-2xl">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-90"></div>
-                <div className="absolute bottom-0 left-0 p-6">
-                  <span className="inline-block px-3 py-1 text-xs font-medium text-white bg-indigo-600 rounded-full mb-2">
+                <div className="absolute bottom-0 left-0 p-5">
+                  <span className="inline-block px-3 py-1 text-xs font-medium text-white bg-indigo-600 rounded-full mb-2 shadow-md">
                     {post.category}
                   </span>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors mb-1">
                     {post.title}
                   </h3>
-                  <div className="flex items-center text-sm text-gray-300">
-                    <span>{post.date}</span>
-                    <span className="mx-2">•</span>
-                    <span>{post.readTime}</span>
+                  <div className="text-sm text-gray-300">
+                    {post.date} <span className="mx-1">•</span> {post.readTime}
                   </div>
                 </div>
               </div>
-              <div className="p-6 bg-gray-100 dark:bg-gray-800">
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <div className="p-6 bg-white/90 dark:bg-gray-900/80 backdrop-blur-md">
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
                   {post.summary}
                 </p>
-                <div className="flex items-center text-indigo-600 dark:text-indigo-400 font-medium">
+                <div className="flex items-center text-indigo-600 dark:text-indigo-400 font-medium transition-all group-hover:translate-x-1">
                   Read Article <ArrowUpRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </a>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          {/* <a 
-            href="/blog" 
-            className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
-          >
-            View All Articles
-          </a> */}
         </div>
       </div>
     </section>
