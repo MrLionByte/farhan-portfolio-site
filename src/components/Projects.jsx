@@ -146,9 +146,10 @@ const Projects = () => {
                     </>
                   )}
 
-                  {project.codeUrl || project.reportUrl && (
+                  {(project.codeUrl || project.reportUrl) && (
                     <>
                     {project.codeUrl ? 
+                    <>
                     <a
                       href={project.codeUrl}
                       target="_blank"
@@ -157,15 +158,18 @@ const Projects = () => {
                     >
                       Code <Github size={14} className="ml-1" />
                     </a>
+                    </>
                     :
+                    <>
                     <a
                       href={project.reportUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400"
+                      className="inline-flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:underline"
                     >
                       Report <FileText size={14} className="ml-1" />
                     </a>
+                    </>
                     }
                     </>
                   )}
