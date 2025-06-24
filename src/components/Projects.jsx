@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, FileText } from 'lucide-react';
 
 const categoryMap = {
   Web: 'web',
@@ -18,6 +18,7 @@ const Projects = () => {
         const response = await axios.get(
           'https://api.myjson.online/v1/records/d4103162-7a3c-417e-adad-60f58da57b2f'
         );
+        
         const allProjects = response.data.data;
         const validCategories = Object.values(categoryMap);
         const filtered = allProjects?.filter(project =>
@@ -145,7 +146,9 @@ const Projects = () => {
                     </>
                   )}
 
-                  {project.codeUrl && (
+                  {project.codeUrl || project.reportUrl && (
+                    <>
+                    {project.codeUrl ? 
                     <a
                       href={project.codeUrl}
                       target="_blank"
@@ -154,6 +157,17 @@ const Projects = () => {
                     >
                       Code <Github size={14} className="ml-1" />
                     </a>
+                    :
+                    <a
+                      href={project.reportUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400"
+                    >
+                      Report <FileText size={14} className="ml-1" />
+                    </a>
+                    }
+                    </>
                   )}
                 </div>
               </div>
