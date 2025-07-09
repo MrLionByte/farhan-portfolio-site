@@ -2,7 +2,7 @@
 
 This is the source code for my personal portfolio. Anyone can clone and ustlise this for your personal portfolio.
 
-🔗 **Live site**: [https://farhanmn.vercel.app](https://farhanmn.site)
+🔗 **Live site**: [https://farhanmn.site](https://farhanmn.site)
 
 ---
 
