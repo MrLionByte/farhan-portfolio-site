@@ -40,7 +40,7 @@ const Footer = () => {
             </ul>
             <div className="flex space-x-4 mt-5">
               <a 
-                href="https://github.com" 
+                href="https://github.com/MrLionByte" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors"
@@ -49,7 +49,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/farhan-mahmood-n/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors"
@@ -58,7 +58,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://x.com/Farhanmn0" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors"

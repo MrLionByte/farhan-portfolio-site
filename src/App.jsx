@@ -59,7 +59,7 @@ function App() {
         <main className="relative">
           {renderActiveSection()}
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
   );
 }
